@@ -107,6 +107,7 @@ def friends(request):
                 return redirect('profile', user_game.id, user_game.user)
         return redirect('friends')
 
+@login_required(login_url="login")
 def profile(request, id, username):
     print("REQUEST.POST: ",request.POST)
     user_atual = request.user
@@ -168,8 +169,9 @@ def register_user(request):
 @login_required(login_url="login")
 def solicitacoes(request):
     user = request.user
+    user_game = User_Game.objects.get(user=user.id)
     if request.method == "GET":
-        pedido = Ask_friend.objects.filter(user_game2=user.id)
+        pedido = Ask_friend.objects.filter(user_game2=user_game)
         print('get: ')
         print(pedido)
         return render(request, 'solicitacoes.html',{'pedido':pedido})
@@ -289,6 +291,7 @@ def invite_friends(request, codeuser,token):
 
         return HttpResponse("Sucesso: ", codeuser)
     
+@login_required(login_url="login")
 def criar_inivite_friends(request):
     user = User_Game.objects.get(id=request.user.id)
     token = secrets.token_hex(5)
@@ -296,8 +299,7 @@ def criar_inivite_friends(request):
     print(token)
     return redirect('home')
 
-
-
+@login_required(login_url="login")
 def enviaremail(request):
     if request.method == "POST":
         destinatario = request.POST['email']
@@ -321,9 +323,11 @@ def enviar_email(destinatario, assunto, mensagem):
     )
     print(send_mail)
 
+@login_required(login_url="login")
 def paint(request):
     return render(request, 'paint.html')
 
+@login_required(login_url="login")
 def game_sweet(request):
     return render(request, 'games/game-paint-sweet.html')
 
@@ -346,6 +350,7 @@ def email(id):
         print("Imagem não encontrada no caminho especificado.")
     email.send()
 
+@login_required(login_url="login")
 def game(request):
     user_game = User_Game.objects.get(user=request.user.id)
     if request.method == "GET":
@@ -364,6 +369,7 @@ def game(request):
             game_number = Game_number.objects.get(user=user_game, status=False)
         return redirect('game_number', game_number.codegame, game_number.token)
 
+@login_required(login_url="login")
 def game_number(request, codegame, token):
     print(request)
     user_game = User_Game.objects.get(user=request.user.id)
