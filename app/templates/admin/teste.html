@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/teste.css' %}">
+    <title>TESTE</title>
+</head>
+<body>
+    <button style="width: 10em; height: 4em;" type="button" id="abri"></button>
+    <div class="jpa">
+        <dialog id="dialogi">
+            <div>
+                <h1>{{token}}</h1>
+                <button id="aguae"><img src="{% static 'images/gamepad-solid-blue-dark.svg' %}" alt=""></button>
+            </div>
+        </dialog>
+    </div>
+    <script>
+        const dialog = document.getElementById('dialogi');
+        const abre = document.getElementById('abri');
+        const aaguaa = document.getElementById('aguae');
+        abre.addEventListener('click', () => dialog.showModal());
+        aaguaa.addEventListener('click', () => dialog.close());
+    </script>
+    <input type="checkbox" name="agua" id="">
+    <input type="checkbox" name="agua" id="">
+</body>
+</html>

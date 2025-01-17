@@ -1,0 +1,92 @@
+.block-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+}
+.user-data{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.user-data-1{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.img-user-data{
+    width: 4em;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+table{
+    height: auto;
+    width: 20em;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-color: var(--global-primary-color);
+}  
+input::placeholder {
+    padding-left: 15px;
+    font: 15px sans-serif;
+}
+th{
+    height: 4em;
+    border: 1.8px solid var(--global-primary-color);
+    border-top-right-radius: 22px;
+    border-top-left-radius: 22px;
+}
+th form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.form-input-text{
+    border-radius: 10px;
+    border-color: var(--global-primary-color);
+    width: 14em;
+    height: 2.3em;
+}
+.form-button-submit{
+    border: 0;
+    background-color: transparent;
+}
+th img{
+    width: 50px;
+}
+td{
+    height: 5em;
+    border: 1.8px solid var(--global-primary-color);
+    border-top: 0px;
+}
+.users-table-friends{
+    display: flex;
+    padding: 14px;
+}
+.img-user-table{
+    width: 25%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.img-user-remove-table{
+    width: 2.7em;
+}
+.user-table-1{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    
+}
+.user-table-2{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+}

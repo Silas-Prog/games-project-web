@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <title> PROFILE </title>
+</head>
+<body>
+    <div class="block-all">
+        <div class="area-sup-profile">
+            <a href="{% url 'friends' %}"><div class="button-exit"><img src="{% static 'images/exit-in-service.svg' %}" alt=""></div></a>
+            <img src="{% static 'images/gamepad-solid-blue-dark.svg' %}">
+        </div>
+        <div class="profile-user">
+            <div class="profile-user-view">
+                <div class="person-area-in-profile">
+                    <img src="{% static 'images/person-solid-white.svg' %}" alt="">
+                </div>
+                <div class="user-in-profile">
+                    <p class="user-name-in-profile">{% if user_friend.user.get_full_name %}{{user_friend.user.get_full_name}}{% else %}{{user_friend.user}}{% endif %}</p>
+                    <p class="user-code-in-profile">#{{user_friend.code}}</p>
+                </div>
+            </div>
+            <div><form method="post">{% csrf_token %}<button type="submit" name="id_user" value="{{user_friend.id}}" class="profile-user-button">ADICIONAR</button></form></div>
+        </div>
+
+        <div class="footer-line-blue"></div>
+    </div>
+</body>
+</html>

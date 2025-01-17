@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/friends.css' %}">
+{% endblock %}
+
+{% block title %}
+    FRIENDS
+{% endblock %}
+
+{% block contend %}
+<div class="block-all">
+    <div class="user-data">
+        <div class="user-data-1"><img class="img-user-data" src="{% static 'images/podtech.jpeg' %}"><p><b>{{user_game.user|upper}}</b><br>#{{user_game.code}}</p></div>
+    </div>
+    <div class="table">
+        <table class="table-friends-list">
+            <thead class="table-friends-list-thead">
+                <tr>
+                    <th {% if not friends %} style="border-radius: 20px;" {% endif %}>
+                        <form method="POST">{% csrf_token %}
+                            <input name="add_friend"  placeholder="Code" class="message-django form-input-text" type="search"><button class="form-button-submit" type="submit"><img src="{% static 'images/gamepad-solid-green.svg' %}" alt=""></button>
+                        </form>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="table-friends-list-tbody">
+                {% for i in friends %}
+                <tr class="table-friends-list-tr">
+                    <td>
+                        <div class="users-table-friends">
+                            <div class="user-table-1"><img class="img-user-table" src="{% static 'images/podtech.jpeg' %}"><p><b>{{i.friend.user|upper}}</b><br>#{{i.friend.code}}</p></div> <div class="user-table-2"><form method="POST">{% csrf_token %}<button name="delete_friend" value="{{i.id}}" type="submit" style="border: 0; background-color: transparent;"><img class="img-user-remove-table" src="{% static 'images/user-remove-solid-blue.svg' %}" alt=""></button></form></div>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <br>
+                <img src="{% static 'images/games-empty.svg' %}" alt="">
+                <br><br>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if messages %}
+
+        <style>
+            .message-django{
+                border-color: red;
+            }
+        </style>
+
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

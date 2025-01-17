@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/games/game-less-more.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <title>STRUMP WEOL</title>
+</head>
+<body>
+    <div class="block-all">
+        <div class="block-header center"><p>STRUMP WEOL</p><div class="div-img-header center"><form method="post">{% csrf_token %}<button name="exit-game" type="submit"><img class="center" src="{% static 'images/exit-in-game.svg' %}"></button></form></div></div>
+        <div class="block-contend">
+            <div class="block-contend-1 center">
+                <div class="result center"><p>{% if number_result %}{{number_result.less_more}}{% else %}START{% endif %}</p></div>
+            </div>
+            <div class="block-contend-2 center">
+                <ul>
+                    {% for i in number_last %}
+                    <li><div class="block-result-pass center"><p>{{i.number}}   |   {% if i.less_more == "MAIOR" %}+{% else %}-{% endif %}</p></div></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="block-footer center">
+            <form method="post">{% csrf_token %}
+                <input type="number" name="number_game" maxlength="10" placeholder="DIGITE UM NÚMERO">
+            </form>
+        </div>
+    </div>
+    {% if number_result.correct %}
+        <audio autoplay>
+            <source src="{% static 'audio/audio-login.mp3' %}" type="audio/mpeg">
+        </audio>
+    {% endif %}
+
+    
+</body>
+</html>

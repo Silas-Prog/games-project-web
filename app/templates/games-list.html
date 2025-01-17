@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/game-list.css' %}">
+<link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+{% endblock %}
+
+{% block title %}
+    teste
+{% endblock %}
+
+{% block contend %}
+
+<div class="block-all">
+    <style>
+        .div{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.515);
+            top: 0vh;
+            z-index: 2;
+            position: fixed;
+            display: none;
+        }
+        .div2{
+            width: 80vw;
+            height: 30vh;
+            background-color: rgba(255, 255, 255);
+            border: 2px solid var(--global-primary-color);
+
+        }
+        .div2 button{
+            width: 10em;
+            height: 10em;
+            position: fixed;
+            
+        }
+    </style>
+    <div id="dive" class="div center">
+        <div class="div2">
+            <button>
+
+            </button>
+        </div>
+    </div>
+    <a href="{% url 'game' %}"><div class="bloco"></div></a>
+    <a href="{% url 'game-sweet' %}"><div class="bloco"></div></a>
+</div>
+<script>
+    const botao = document.querySelector("button")
+    const div = document.getElementById("dive")
+    botao.addEventListener("click", () =>{
+        console.log("apertouuu");
+        div.style.display = "none";
+    })
+</script>
+
+{% endblock %}
+

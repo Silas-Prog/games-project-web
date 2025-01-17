@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="assunto">Assunto:</label>
+        <input type="text" name="assunto" id="assunto" required>
+        <br>
+        <label for="mensagem">Mensagem:</label>
+        <textarea name="mensagem" id="mensagem" required></textarea>
+        <br>
+        <select name="teste">
+            <option value="1">enviar via email comum</option>
+            <option value="2">enviar via email html</option>
+        </select>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>    
+</body>
+</html>

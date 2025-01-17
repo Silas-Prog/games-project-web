@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/support_create.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <title>Suporte</title>
+</head>
+<body class="block-all">
+    <header>
+        <div class="block-header-all">
+            <div class="block-header block-header-1"><a href="{% url 'support' %}"><p>Suporte</p></a><a href="{% url 'home' %}"><img src="{% static 'images/house-solid-white.svg' %}"></a></div>
+        </div>
+    </header>
+    <main>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="block-contend-all">
+                <div class="div-form-name"><p>TÍTULO</p></div>
+                <input class="form-input-title" type="text" id="title" name="title" maxlength="40">
+                <div class="div-form-name"><p>DESCRIÇÃO</p></div>
+                <textarea class="form-textarea-title" id="description" name="description" cols="30" maxlength="300"></textarea>
+                <div class="div-form-name"><p>ÁREA</p></div>
+                <select class="form-select-title" name="area_s" required>
+                    <option value="5" selected>ESCOLHA A ÁREA ASSOCIADA</option>
+                    {% for value, name in area %}
+                    <option value="{{ value }}">{{ name }} </option>
+                    {% endfor %}
+                </select>
+                <button class="form-button-submit" type="submit"><p>Enviar</p></button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

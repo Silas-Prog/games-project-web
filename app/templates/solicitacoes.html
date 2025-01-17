@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/solicitacoes.css' %}">
+{% endblock %}
+
+{% block title %} Solicitacoes {% endblock %}
+
+{% block contend %}
+<div class="block-all">
+    <div class="block-title-h1">
+        <h1>SOLICITAÇÕES</h1>
+    </div>
+    <div class="solicitacoes-contend">
+        <ul>
+            {% for i in pedido %}
+            <li>
+                <div class="block-true-false">
+                    <div class="block-infor-user"><img title="{{i.user_game1.user|upper}} - {{i.user_game1.code}}" src="{% static 'images/person-solid-white.svg' %}"><p>{{i.user_game1.user|upper}}</p></div><div class="block-buttons-true-false"><form method="POST">{% csrf_token %}<button name="friend-false" value="{{i.id}}" type="submit"><img src="{% static 'images/circle-false-solid-red.svg' %}"></button></form><form method="POST">{% csrf_token %}<button name="friend-true" value="{{i.id}}" type="submit"><img src="{% static 'images/circle-true-solid-green.svg' %}"></button></form></div>
+                </div>
+            </li>
+            {% empty %}
+            <p>Não há solicitações!</p>
+            {% endfor %}      
+        </ul>
+    </div>
+    <div class="version">
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/support.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <title>Suporte</title>
+</head>
+<body class="block-all">
+    <header>
+        <div class="block-header-all">
+            <div class="block-header block-header-1"><p>Suporte</p><a href="{% url 'home' %}"><img src="{% static 'images/house-solid-white.svg' %}"></a></div>
+            <a href="{% url 'support-create' %}"><div class="block-header block-header-2"><p>Nova solicitação</p><img src="{% static 'images/add-solid-white.svg' %}"></div></a>
+        </div>
+    </header>
+    <main>
+        <div class="block-contend-all">
+            <ul>
+                {% for support in support %}
+                <br><br>
+                <li>
+                    <div class="block-li-supports">
+                        <p class="text-protocol">#{{support.protocol}}</p>
+                        <div class="barra"></div>
+                        <p class="text-title">{{support.title}}</p>
+                        <p class="text-description">{{support.description}}</p>
+                        <a href="{% url 'support-protocol' support.protocol %}">{% if support.status == 0 %}<div style="background-color: var(--global-third-color);" class="div-status">{% else %}<div style="background-color: var(--global-seventh-color);" class="div-status">{% endif %}<p class="text-status">{% if support.status == 0 %} ACOMPANHAR PROCESSO {% else %} PROCESSO FINALIZADO {% endif %}</p><img class="exit-img" src="{% static 'images/exit-in-service.svg' %}"></div></a>
+                    </div>
+                </li>
+                <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

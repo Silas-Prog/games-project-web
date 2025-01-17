@@ -1,0 +1,86 @@
+.block-all{
+    display: flex;
+    background-color: #0003A7;
+    flex-direction: column;
+    overflow: none;
+    height: 100vh;
+    width: 100vw;
+}
+.block-img-game{
+    background-image: url('/static/images/background.png');
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center;
+    height: 30vh;
+    width: 100vw;
+}
+.block-infor-game{
+    height: 70vh;
+    width: 100vw;
+    background-color: #2e3031;
+    border-top-right-radius: 60px;
+    border-top-left-radius: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.button-exit{
+    width: 3.5em;
+    height: 3.5em;
+    background-color: #2e3031;
+    border-radius: 50%;
+    position: fixed;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-exit img{
+    width: 1.9em;
+}
+.infor-name{
+    width: 80vw;
+    height: 16vh;
+}
+.infor-name p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--global-fifth-color);
+}
+.infor-description{
+    width: 85vw;
+    height: 30vh;
+}
+.infor-description p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--global-fifth-color);  
+}
+.infor-logi{
+    width: 80vw;
+    height: 10vh;
+}
+.infor-logi p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--global-fifth-color);  
+}
+.button-logi{
+    border: 0;
+    width: 16em;
+    height: 4.5em;
+    padding: 30px;
+    border-radius: 18px;
+    background-color: var(--global-eighth-color);
+
+}
+.infor-description{
+
+}
+.infor-logi{
+    
+}

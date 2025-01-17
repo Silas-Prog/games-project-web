@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <title>Paint Sweet</title>
+</head>
+<body>
+    <div class="block-all">
+        <canvas></canvas>
+        <div>
+            <input type="range" name="" id="">
+        </div>
+    </div>
+</body>
+</html>
+<style>
+.block-all{
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+}
+canvas{
+    background-color: red;    
+    border: 1px solid blue;
+}
+
+</style>
+<script>
+    const canvas = document.querySelector('canvas');
+    const input_range = document.querySelector('input');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+        canvas.width = (window.innerWidth - 2);
+        canvas.height = window.innerHeight * 0.3;
+
+        // Exemplo de desenho no canvas
+        ctx.fillStyle = 'lightblue';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    resizeCanvas();
+
+    window.addEventListener('resize', resizeCanvas);
+</script>

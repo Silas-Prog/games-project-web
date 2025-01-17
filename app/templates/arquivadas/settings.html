@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/settings.css' %}">
+{% endblock %}
+
+{% block title %} Settings {% endblock %}
+
+{% block contend %}
+
+<div class="block-all">
+    <div class="block-title-h1">
+        <h1>SETTINGS</h1>
+    </div>
+    <div class="settings-contend">
+        <ul>
+            <li>
+                <div class="settings-blocks-all"><div class="settings-block1"><img src="{% static 'images/person-solid-blue-dark.svg' %}"><p class="settings-service-name">Account</p></div><div class="settings-block2"><form ><a href="{% url 'accounts' %}"><img src="{% static 'images/exit-in-service.svg' %}"></a></form></div></div>
+            </li>
+            <div class="barra-separar"></div>
+            <li>
+                <div class="settings-blocks-all"><div class="settings-block1"><img src="{% static 'images/gamepad-solid-blue-dark.svg' %}"><p class="settings-service-name">Match</p></div><div class="settings-block2"><form ><a href="{% url 'match' %}"><img src="{% static 'images/exit-in-service.svg' %}"></a></form></div></div>
+            </li>
+            <div class="barra-separar"></div>
+            <li>
+                <div class="settings-blocks-all"><div class="settings-block1"><img src="{% static 'images/group-solid-blue-dark.svg' %}"><p class="settings-service-name">Request</p></div><div class="settings-block2"><form ><a href="{% url 'request' %}"><img src="{% static 'images/exit-in-service.svg' %}"></a></form></div></div>
+            </li>
+            <div class="barra-separar"></div>
+            <li>
+                <div class="settings-blocks-all"><div class="settings-block1"><img src="{% static 'images/about-solid-blue-dark.svg' %}"><p class="settings-service-name">About</p></div><div class="settings-block2"><form ><a href="{% url 'about' %}"><img src="{% static 'images/exit-in-service.svg' %}"></a></form></div></div>
+            </li>
+        </ul>
+    </div>
+    <div class="settings-contend-version">
+        <p>SILAS GAMES</p>
+        <p>0.0.0</p>
+    </div>   
+    <div class="a">
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block menu %}
+l
+{% endblock %}

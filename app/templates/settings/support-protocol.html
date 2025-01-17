@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <title>PROTOCOLO: {{support.protocol}}</title>
+</head>
+<body>
+    <p>PROTOCOLO: {{support.protocol}}</p>
+    <a href="{% url 'support' %}">SUPORTE</a>
+</body>
+</html>

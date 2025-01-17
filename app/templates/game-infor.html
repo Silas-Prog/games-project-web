@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/game-infor.css' %}">
+    <title>STRUMP WEOL</title>
+</head>
+<body>
+    <div class="block-all">
+        <div class="block-img-game">
+            <a href="{% url 'games' %}"><div class="button-exit"><img src="{% static 'images/exit-in-service.svg' %}"></div></a>
+            <div style="height: 70%; width: 100%;"></div>
+            
+        </div>
+        <div class="block-infor-game">
+            <div class="infor-name center"><p>STRUMP WEOL</p></div>
+            <div class="infor-description"><p>Nesse jogo o sistema irá escolher um número aleatório e você deverá adivinhar qual é o número.
+                Mais calma! o sistema irá te ajudar informando se o número é maior ou menor </p></div>
+            <div class="infor-logi center"><form method="post">{% csrf_token %}<button class="button-logi center"><p>ENTRAR</p></button></form></div>
+        </div>
+    </div>
+</body>
+</html>

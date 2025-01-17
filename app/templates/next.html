@@ -1,0 +1,40 @@
+{% load static %}
+  
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/next.css' %}">
+    
+    <title>LOGIN</title>
+    </head>
+    <body>
+        <main>
+            <div class="contend">
+                <div class="div1"></div>
+                <button type="button">
+                    <a href="{% url 'home' %}">
+                        <div class="div2">
+                            <div class="contend-toq">
+                                <img src="{% static 'images/gamepad-solid-white.svg' %}">
+                                <span class="p-teste">
+                                    <p>SILAS</p>
+                                    <p>GAMES</p>
+                                </span>
+                                <p class="text">toque para continuar</p>
+                            </div>
+                        </div>
+                    </a>
+                </button>
+                <div class="div3"></div>
+            </div>
+        </main>
+        <audio autoplay>
+            <source src="{% static 'audio/audio-login.mp3' %}" type="audio/mpeg">
+        </audio>
+    </body>
+</html>
+

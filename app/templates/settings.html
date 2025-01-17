@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <title>Configurações</title>
+</head>
+<body>
+    <header>
+        <div class="block-header">
+            <div class="block-header-1">
+                <p>Configurações</p><a href="{% url 'home' %}"><img src="{% static 'images/house-solid-white.svg' %}"></a>
+            </div>
+            <div class="block-header-2">
+                <p>{{user.get_full_name|upper}}</p> 
+            </div>
+        </div>
+    </header>
+    <main class="block-contend">
+        <ul>
+            <li><a href="{% url 'home' %}"><div class="block-service-config"><div class="service-icon"><img src="{% static 'images/person-solid-blue.svg' %}"></div><p>Perfil</p></div></a></li>
+            <li><a href="{% url 'solicitacoes' %}"><div class="block-service-config"><div class="service-icon"><img src="{% static 'images/group-solid-blue.svg' %}"></div><p>Solicitações</p></div></a></li>
+            <li><a href="{% url 'support' %}"><div class="block-service-config"><div class="service-icon"><img src="{% static 'images/mail-solid-blue.svg' %}"></div><p>Suporte</p></div></a></li>
+            <li><a href="{% url 'home' %}"><div class="block-service-config"><div class="service-icon"><img src="{% static 'images/gear-solid-blue.svg' %}"></div><p>Gerais</p></div></a></li>
+            <li><a href="{% url 'home' %}"><div class="block-service-config"><div class="service-icon"><img src="{% static 'images/about-solid-blue.svg' %}"></div><p>Ajuda</p></div></a></li>
+        </ul>
+    </main>
+
+    <script>
+        function share(link){
+            navigator.clipboard.writeText(link)
+        }
+    </script>
+    
+</body>
+</html>

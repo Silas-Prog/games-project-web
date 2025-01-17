@@ -1,0 +1,35 @@
+{% load static %}
+  
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/menu.css' %}">
+    
+    {% block head %}{% endblock %}
+    <title>{% block title %}layout html{% endblock %}</title>
+  </head>
+  <body>
+    <div class="div1"></div>
+    {% block contend %}
+
+    {% endblock %}
+    <div class="a">
+    </div>
+    <main>
+      <nav>
+          <div class="bottom-bar-div">
+              <div class="block"><a href="{% url 'friends' %}"><img src="{% static 'images/group-person-solid-white.svg' %}" alt=""></a></div>
+              <div class="block"><a href="{% url 'games' %}"><img src="{% static 'images/gamepad-solid-white.svg' %}" alt=""></a></div>
+              <div class="block"><a href="{% url 'home' %}"><div class="fixo"><img src="{% static 'images/house-solid-white.svg' %}" alt=""></div></a></div>
+              <div class="block"><a href="{% url 'logout' %}"><img src="{% static 'images/logout-solid-white.svg' %}" alt=""></a></div>
+              <div class="block"><a href="{% url 'settings' %}"><img src="{% static 'images/user-gear-solid-white.svg' %}" alt=""></a></div>
+          </div>
+      </nav>
+  </main>
+  
+  <script src="{% static 'js/script.js' %}"></script>
+</html>

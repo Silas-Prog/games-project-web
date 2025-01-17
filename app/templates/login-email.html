@@ -1,0 +1,46 @@
+{% load static %}
+  
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    
+    <title>LOGIN COM CÓDIGO</title>
+  </head>
+  <body>
+
+<main>
+    <div class="contend">
+        <div class="div1"></div>
+        <div class="div2">
+            <div class="login-area">
+                <h1>LOGIN</h1>
+                {% if messages %}
+                {% for i in messages %}
+                <p style="background-color: white; margin-top: 10px; color: #ff0000; padding: 10px; font-weight: 700; border-radius:7px;">{{i|upper}}</p>
+                {% endfor %}
+                <style>.red{background-color: #ff0000;}</style>
+                {% else %}
+                <p style="color: #ffffff;">INFORME O EMAIL</p>
+                {% endif %}
+                <form action="{% url 'login-with-code' %}" method="POST" class="form-login">
+                    {% csrf_token %}
+                    <br><br>
+                    <input name="email" type="email" placeholder="email">
+                    <br><br>
+                    <button class="red form-button-submit" type="submit"><p>play</p></button>
+                    <br><br>
+                </form>
+                <img class="login-area-img" src="{% static 'images/gamepad-solid-white.svg' %}">
+            </div>
+        </div>
+        <div class="div3"></div>
+    </div>
+</main>
+
+</body>
+</html>

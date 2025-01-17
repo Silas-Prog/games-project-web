@@ -1,0 +1,101 @@
+button{
+    background-color: transparent;
+    border: 0;
+}
+.block-all{
+    width: 100vw;
+    height: 100vh;
+}
+.area-sup-profile{
+    padding-top: 20px;
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: space-between;
+}
+.button-exit{
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    background-color: var(--global-primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-exit img{
+    width: 50%;
+}
+.profile-user{
+    padding: 15px;
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+.profile-user-view{
+    border-radius: 15px;
+    border: 3px solid var(--global-second-color);
+    width: 80vw;
+    height: 62vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.person-area-in-profile{
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    background-color: var(--global-second-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.person-area-in-profile img{
+    width: 45%;
+}
+.user-in-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.user-name-in-profile{
+    font-size: 27px;
+    padding: 10px;
+    justify-content: center;
+    color: var(--global-second-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+.user-code-in-profile{
+    font-size: 20px;
+    color: var(--global-second-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    
+}
+.profile-user-button{
+    width: 80vw;
+    height: 3em;
+    border-radius: 15px;
+    background-color: var(--global-primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+.footer-line-blue{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 3vh;
+    background-color: var(--global-second-color);
+}

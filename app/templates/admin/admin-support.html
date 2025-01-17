@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/gamepad-solid-blue.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/admin/admin-support.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/base.css' %}">
+    <title>Suporte</title>
+</head>
+<body class="block-all">
+    <header>
+        <div class="block-header-all">
+            <div class="block-header block-header-1"><p>Suporte</p><a href="{% url 'home' %}"><img src="{% static 'images/house-solid-white.svg' %}"></a></div>
+        </div>
+    </header>
+    <main>
+        <div class="block-contend-all">
+            <ul>
+                {% for support in support %}
+                <br><br>
+                <li>
+                    <div class="block-li-supports">
+                        <p class="text-protocol">#{{support.protocol}}</p>
+                        <div class="barra"></div>
+                        <a href="{% url 'support-protocol' support.protocol %}"><div class="div-status"><p class="text-status">RESOLVER PROBLEMA</p><img class="exit-img" src="{% static 'images/exit-in-service.svg' %}"></div></a>
+                    </div>
+                </li>
+                <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
